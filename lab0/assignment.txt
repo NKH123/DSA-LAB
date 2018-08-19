@@ -1,0 +1,6 @@
+fnc to return factorial of n
+func to print first n fib no,s
+func isprime(), returns 1 if prime else returns 0
+find gcd of 2 no.s
+bubble sort
+insertion sort
