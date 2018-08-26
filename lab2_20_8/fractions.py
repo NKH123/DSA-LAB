@@ -1,8 +1,30 @@
+def gcd(a,b):
+    if a<0:
+        a=-1*a
+    if b<0:
+        b=-1*b
+    if a>b:
+        t=a
+        a=b
+        b=t
+    if a==0:
+        return b
+
+    else:
+        return gcd(b%a,a)
+
+
+
+
+
 class Fraction:
 
     def __init__(self,num,den):
-        self.num=num
-        self.den=den
+        
+        t=gcd(num,den)
+        self.num=num//t
+        self.den=den//t
+
 
     def inverse(self):
         """Returns the inverse of this Fraction"""
@@ -43,7 +65,7 @@ def main():
     f2 = Fraction(3,4)
     print ('Fraction 2 is', f2)
     print ('The inverse of f1 is', f1.inverse())
-    print ('The inverse of f2 is', f1.inverse())
+    print ('The inverse of f2 is', f2.inverse())
     print ('f1+f2 is', f1.add(f2))
     print ('f1-f2 is', f1.subtract(f2))
     print ('f1 * f2 is', f1.multiply(f2))
